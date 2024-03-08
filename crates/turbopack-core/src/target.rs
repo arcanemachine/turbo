@@ -95,6 +95,10 @@ impl CompileTarget {
         {
             return Arch::Ppc64;
         }
+        #[cfg(target_arch = "riscv64")]
+        {
+            return Arch::Riscv64;
+        }
         #[cfg(target_arch = "s390x")]
         {
             return Arch::S390x;
@@ -170,6 +174,7 @@ pub enum Arch {
     Mipsel,
     Ppc,
     Ppc64,
+    Riscv64,
     S390,
     S390x,
     X64,
@@ -186,6 +191,7 @@ impl Arch {
             Self::Mipsel => "mipsel",
             Self::Ppc => "ppc",
             Self::Ppc64 => "ppc64",
+            Self::Riscv64 => "riscv64",
             Self::S390 => "s390",
             Self::S390x => "s390x",
             Self::X64 => "x64",
